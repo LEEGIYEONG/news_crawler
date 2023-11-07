@@ -9,22 +9,25 @@ keyword_list = ["반도체", "디스플레이", "이차전지", "차세대원전
 # 각 키워드에 대해 월별 뉴스 타이틀 리스트를 저장할 데이터 구조
 titles = {keyword: [[] for _ in range(12)] for keyword in keyword_list}
 
+user_agent = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36",
+    "Referer": "https://www.google.com"
+}
+
 for keyword_index, keyword in enumerate(keyword_list):
-    for i in range(1, 12):  # 1월부터 11월
+    for i in range(1, 2):  # 1월부터 11월(현재 1페이지)
         month = "{:02d}".format(i)
-        for j in range(1, 51):  # 1페이지부터 50페이지까지
+        for j in range(1, 5):  # 1페이지부터 50페이지까지(현재 3)
             start = (j - 1) * 10 + 1
             url = "https://search.naver.com/search.naver?where=news&sm=tab_pge&query={}&sort=0&photo=0&field=0&pd=3&ds=2023.{}.01&de=2023.{}.31&cluster_rank=749&mynews=0&office_type=0&office_section_code=0&news_office_checked=&office_category=0&service_area=0&nso=so:r,p:from2023{}01to2023{}31,a:all&start={}".format(
                 keyword, month, month, month, month, start)
-            res = requests.get(url)
+            res = requests.get(url, headers=user_agent)
             soup = BeautifulSoup(res.text, "html.parser")
-            # print(res.status_code)  # HTTP 상태 코드 확인
-            # print(res.text)  # 반환된 HTML 확인
+            print(res.status_code)  # HTTP 상태 코드 확인
+            # 모든 뉴스 타이틀 링크를 찾습니다.
             for link in soup.find_all('a', class_='news_tit'):
                 title = link.get('title')
                 titles[keyword][i-1].append(title)
+            print(titles[keyword][i-1])
 
-            time.sleep(1)
-
-# 차단 안당하게 User-Agent를 추가하든가 스크래핑을 좀 나누든가 해야할 것 같습니다. 저대로 돌렸더니 차단당하네요ㅜㅜ
-# 돌리실때는 i, j 범위를 줄여서 돌려보시는게 좋을 것 같습니다!
+            time.sleep(5)
