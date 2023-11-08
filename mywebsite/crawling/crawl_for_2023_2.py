@@ -34,3 +34,10 @@ for keyword in keyword_list:
 
 with open('titles_2023_2.json', 'w') as file:
     json.dump(titles_2023_2, file)
+
+# import json
+
+# with open('mywebsite/crawling/titles_2023_2.json', 'r', encoding='utf-8') as file:
+#    titles_2023_2 = json.load(file)
+
+# print(titles_2023_2["반도체"])
