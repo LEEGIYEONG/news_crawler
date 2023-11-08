@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .box {
+    width: 30%; /* 각 박스의 너비 조정 */
+    margin: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer; /* 커서를 포인터로 변경하여 클릭 가능하게 함 */
+  }
+  .box a {
+    display: block; /* 링크 영역을 박스 전체로 확장 */
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }

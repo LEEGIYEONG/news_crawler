@@ -4,35 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>과학기술 뉴스를 이용한 시장동향 시각화</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-      }
-      h1 {
-        font-size: 24px;
-      }
-      .box-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-      .box {
-        width: 30%; /* 각 박스의 너비 조정 */
-        margin: 10px;
-        padding: 10px;
-        background-color: #f0f0f0;
-        border: 2px solid #ccc;
-        border-radius: 10px;
-        cursor: pointer; /* 커서를 포인터로 변경하여 클릭 가능하게 함 */
-      }
-      .box a {
-        display: block; /* 링크 영역을 박스 전체로 확장 */
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-      }
-    </style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
   </head>
   <body>
     <a href="{% url 'main_page' %}"><h1>6가지 키워드 과학기술 뉴스를 이용한 시장 동향 시각화</h1></a>
