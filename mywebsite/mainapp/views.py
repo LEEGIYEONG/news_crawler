@@ -1,37 +1,30 @@
 from django.shortcuts import render
 from wordcloud import WordCloud
+from django.conf import settings
 import requests
+import json
+import io
+import base64
 from bs4 import BeautifulSoup
 
 def main_page(request):
     return render(request, 'mainapp/main_page.html')
 
+def my_view(request):
+    # JSON 파일의 경로 가져오기
+    json_file_path = settings.JSON_FILE_PATH
+
+    # JSON 파일 읽어오기
+    with open(json_file_path, 'r') as json_file:
+        data = json.load(json_file)
+
 def space(request):
-    # 뉴스 웹 사이트에서 뉴스 데이터 크롤링 (예시: 네이버 뉴스)
-    news_url = "https://news.naver.com/"
-    response = requests.get(news_url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-
-    # 뉴스 데이터 추출
-    news_text = ""
-    for headline in soup.find_all('strong', {'class': 'headline'}):
-        news_text += headline.get_text() + " "
-
-    # 워드 클라우드 생성
-    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(news_text)
-
-    # 워드 클라우드 이미지를 저장
-    wordcloud_image_path = 'mainapp/static/mainapp/wordcloud.png'
-    wordcloud.to_file(wordcloud_image_path)
-
-    # 워드 클라우드 이미지의 URL
-    wordcloud_image_url = '/static/mainapp/wordcloud.png'
-
-    return render(request, 'mainapp/space.html', {'wordcloud_image_url': wordcloud_image_url})
+    # 'space' 서브페이지 뷰 로직을 작성
+    return render(request, 'mainapp/space.html')
 
 def semiconductor(request):
-    # 'semiconductor' 서브페이지 뷰 로직을 작성
-    return render(request, 'mainapp/semiconductor.html')
+
+    return render(request, 'mainapp/semiconductor.html', )
 
 def hydrogen(request):
     # 'hydrogen' 서브페이지 뷰 로직을 작성
