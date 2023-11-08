@@ -1,11 +1,7 @@
 from django.shortcuts import render
-from wordcloud import WordCloud
 from django.conf import settings
 import requests
 import json
-import io
-import base64
-from bs4 import BeautifulSoup
 
 def main_page(request):
     return render(request, 'mainapp/main_page.html')
