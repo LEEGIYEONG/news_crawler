@@ -1,27 +1,97 @@
+@font-face {
+  font-family: 'TiltleFont';
+  src: url('/static/fonts/BM-JUA_TTF윈도우용.ttf') format('truetype'); /* TTF 폰트 형식 */
+}
+@font-face {
+  font-family: 'keywordFont';
+  src: url('/static/fonts/KOMACON.ttf') format('truetype'); /* TTF 폰트 형식 */
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     font-family: Arial, sans-serif;
     text-align: center;
+    align-items: center; 
   }
   h1 {
     font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 35px;
+    font-family: 'TiltleFont', sans-serif;
+    font-weight: 500;
   }
   .box-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    width: 70vw;
+    margin-bottom: 5vh;
+    border-radius: 10px;
+    background-color: #f0f0f0;
   }
   .box {
-    width: 30%; /* 각 박스의 너비 조정 */
+    width: 8%; /* 각 박스의 너비 조정 */
     margin: 10px;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border: 2px solid #ccc;
-    border-radius: 10px;
+    padding: 5px;
+    background-color: #dddddd;
+    border-radius: 8px;
     cursor: pointer; /* 커서를 포인터로 변경하여 클릭 가능하게 함 */
+    font-family: 'keywordFont', sans-serif;
+    font-weight: bold;
   }
   .box a {
     display: block; /* 링크 영역을 박스 전체로 확장 */
-    text-decoration: none;
     color: #333;
-    font-weight: bold;
+  }
+
+  .selected_box {
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .wordcloud_6_box {
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+    border: 2px dotted transparent;
+    justify-content: space-between;
+  }
+
+  .wordcloud_2_column {
+    display: flex;
+    flex-direction: column;
+    border: 2px dotted transparent;
+    justify-content: space-between;
+  }
+  .wordcloud_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    width: 22vw;
+    height: 35vh;
+    margin-bottom: 20px;
+  }
+  .wordcloud_1 img {
+    /* 이미지의 스타일 설정 */
+    max-width: 100%; /* 이미지의 최대 너비를 부모 요소의 너비에 맞춤 */
+    height: auto; /* 높이를 자동으로 조절하여 이미지의 원래 가로 세로 비율을 유지함 */
+    border-radius: inherit;
+  }
+  .period {
+    display: flex;
+    border: 2px dotted transparent;
+    margin-right: 10px;
+    font-family: 'TiltleFont', sans-serif;
+    font-weight: lighter;
+  }
+
+  a {
+    text-decoration: none; /* 밑줄 제거 */
+  }
+
+  a:visited {
+    color: inherit; /* 상위 요소로부터 상속된 색상 사용 */
   }

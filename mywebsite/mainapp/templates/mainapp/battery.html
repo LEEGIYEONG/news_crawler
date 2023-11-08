@@ -1,12 +1,72 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>뉴스 워드 클라우드</title>
-</head>
-<body>
-    <h1>뉴스 워드 클라우드</h1>
-    <div>
-        <img src="{{ wordcloud_image_url }}" alt="Word Cloud">
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>과학기술 뉴스를 이용한 시장동향 시각화</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <a href="{% url 'main_page' %}"><h1>6가지 키워드 과학기술 뉴스를 이용한 시장 동향 시각화</h1></a>
+    <div class="box-container">
+      <a class="box" href="{% url 'semiconductor' %}">반도체</a>
+      <a class="box selected_box" href="{% url 'battery' %}">이차전지</a>
+      <a class="box" href="{% url 'hydrogen' %}">수소</a>
+      <a class="box" href="{% url 'space' %}">우주</a>
+      <a class="box" href="{% url 'robot' %}">로봇</a>
+      <a class="box" href="{% url 'ai' %}">인공지능</a>
     </div>
-</body>
+
+    <div class="wordcloud_6_box">
+      <div class="wordcloud_2_column">
+        <div class="wordcloud_1">
+          <div class="period">
+            <span>2021</span>
+            <span>상반기</span>
+          </div>
+          <img src="{{ wordcloud_image_url }}" alt="Word Cloud" />
+        </div>
+        <div class="wordcloud_1">
+          <div class="period">
+            <span>2021</span>
+            <span>상반기</span>
+          </div>
+          <img src="{{ wordcloud_image_url }}" alt="Word Cloud" />
+        </div>
+      </div>
+      <div class="wordcloud_2_column">
+        <div class="wordcloud_1">
+          <div class="period">
+            <span>2021</span>
+            <span>상반기</span>
+          </div>
+          <img src="{{ wordcloud_image_url }}" alt="Word Cloud" />
+        </div>
+        <div class="wordcloud_1">
+          <div class="period">
+            <span>2021</span>
+            <span>상반기</span>
+          </div>
+          <img src="{{ wordcloud_image_url }}" alt="Word Cloud" />
+        </div>
+      </div>
+      <div class="wordcloud_2_column">
+        <div class="wordcloud_1">
+          <div class="period">
+            <span>2021</span>
+            <span>상반기</span>
+          </div>
+          <img src="{{ wordcloud_image_url }}" alt="Word Cloud" />
+        </div>
+        <div class="wordcloud_1">
+          <div class="period">
+            <span>2021</span>
+            <span>상반기</span>
+          </div>
+          <img src="{{ wordcloud_image_url }}" alt="Word Cloud" />
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
