@@ -7,6 +7,18 @@
   src: url('/static/fonts/KOMACON.ttf') format('truetype'); /* TTF 폰트 형식 */
 }
 
+@keyframes fadeIn {
+  from {
+    transform: translate(1px, -1px); 
+    opacity: 0; /* 이미지는 투명하게 시작 */
+  }
+  to {
+    opacity: 1; /* 애니메이션 끝날 때 이미지는 완전히 불투명합니다. */
+    transform: translateY(0); /* 이미지가 최종 위치에 있습니다. */
+  }
+}
+
+
 body {
     display: flex;
     flex-direction: column;
@@ -82,6 +94,7 @@ body {
     border-radius: inherit;
     border: 2px dotted transparent;
     margin-top: auto;
+    animation: fadeIn 1s ease-out forwards;
   }
   .period {
     display: flex;
@@ -124,3 +137,4 @@ body {
   .main_chart_2 img {
     border: 2px dotted purple;
   }
+
