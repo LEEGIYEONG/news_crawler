@@ -9,11 +9,11 @@
     <style>
       .chart {
         display: flex;
-        flex-direction: row; 
+        flex-direction: row;
       }
-    
+      
       .chart img {
-        max-width: 100%; 
+        max-width: 100%;
         height: auto;
         margin: 0px;
       }
@@ -30,10 +30,10 @@
       <a class="box" href="{% url 'ai' %}">인공지능</a>
     </div>
     <div class="chart">
-      <div>
+      <div class="main_chart_1">
         <img src="{% static 'chart/pie_chart.png' %}" alt="Pie Chart" />
       </div>
-      <div>
+      <div class="main_chart_2">
         <img src="{% static 'chart/line_chart.png' %}" alt="Line Chart" />
       </div>
     </div>

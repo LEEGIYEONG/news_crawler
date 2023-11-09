@@ -69,6 +69,7 @@ body {
     flex-direction: column;
     align-items: center; 
     background-color: #f0f0f0;
+    border: 2px solid transparent;
     border-radius: 20px;
     width: 22vw;
     height: 35vh;
@@ -79,15 +80,16 @@ body {
     max-width: 100%; /* 이미지의 최대 너비를 부모 요소의 너비에 맞춤 */
     height: auto; /* 높이를 자동으로 조절하여 이미지의 원래 가로 세로 비율을 유지함 */
     border-radius: inherit;
+    border: 2px dotted transparent;
+    margin-top: auto;
   }
   .period {
     display: flex;
     border: 2px dotted transparent;
-    margin-right: 10px;
     font-family: 'TiltleFont', sans-serif;
     font-weight: lighter;
     position: relative;
-    top: 15px;
+    top: 5px;
   }
 
   a {
@@ -98,7 +100,27 @@ body {
     color: inherit; /* 상위 요소로부터 상속된 색상 사용 */
   }
 
-  img{
-    position: relative; /* 이미지 위치 조정 */
-    top: 50px;
+  .chart {
+    width: 70vw;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .main_chart_1 {
+    display: flex;
+    border: 2px dotted red;
+    justify-content: center;
+    align-items: center;
+  }
+  .main_chart_1 img {
+    border: 2px dotted green;
+  }
+  .main_chart_2 {
+    display: flex;
+    border: 2px dotted blue;
+    justify-content: center;
+    align-items: center;
+  }
+  .main_chart_2 img {
+    border: 2px dotted purple;
   }
