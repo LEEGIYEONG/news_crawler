@@ -56,6 +56,10 @@ body {
     display: block; /* 링크 영역을 박스 전체로 확장 */
     color: #333;
   }
+  
+  a:visited {
+    color: inherit; /* 상위 요소로부터 상속된 색상 사용 */
+  }
 
   .selected_box {
     background-color: hsl(0, 0%, 100%);
@@ -85,7 +89,7 @@ body {
     border-radius: 20px;
     width: 22vw;
     height: 35vh;
-    margin-bottom: 20px;
+    margin-bottom: 3px;
   }
   .wordcloud_1 img {
     /* 이미지의 스타일 설정 */
@@ -107,10 +111,6 @@ body {
 
   a {
     text-decoration: none; /* 밑줄 제거 */
-  }
-
-  a:visited {
-    color: inherit; /* 상위 요소로부터 상속된 색상 사용 */
   }
 
   .chart {
@@ -135,6 +135,18 @@ body {
     align-items: center;
   }
   .main_chart_2 img {
-    border: 2px dotted purple;
+    border: 2px dotted lightblue;
+  }
+  .download_image {
+    margin-bottom: 15px;
   }
 
+  .download_image a {
+    font-family: 'keywordFont', sans-serif;
+    font-weight: 100;
+    color:black;
+
+  }
+  .download_image a:visited {
+    color: black; /* 방문한 링크의 색상을 검은색으로 설정 */
+  }
