@@ -21,7 +21,7 @@
     </style>
   </head>
   <body>
-    <a href="{% url 'main_page' %}"><h1>6가지 키워드 과학기술 뉴스를 이용한 시장 동향 시각화</h1></a>
+    <a  href="{% url 'main_page' %}"><h1>6가지 키워드 과학기술 뉴스를 이용한 시장 동향 시각화</h1></a>
     <div class="box-container">
       <a class="box" href="{% url 'semiconductor' %}">반도체</a>
       <a class="box" href="{% url 'battery' %}">이차전지</a>
@@ -32,11 +32,11 @@
     </div>
     <div class="chart">
       <div class="main_chart_1">
-        <span>차트 제목</span>
+        <span class="chart_text">10월 기술뉴스 키워드 비율</span>
         <img src="{% static 'chart/pie_chart.png' %}" alt="Pie Chart" />
       </div>
       <div class="main_chart_2">
-        <span>차트 제목</span>
+        <span class="chart_text">키워드별 10월 일별 빈도수</span>
         <img src="{% static 'chart/line_chart.png' %}" alt="Line Chart" />
       </div>
     </div>

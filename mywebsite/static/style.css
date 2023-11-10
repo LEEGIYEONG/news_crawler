@@ -6,6 +6,15 @@
   font-family: 'keywordFont';
   src: url('/static/fonts/KOMACON.ttf') format('truetype'); /* TTF 폰트 형식 */
 }
+@font-face {
+  font-family: 'establishFont';
+  src: url('/static/fonts/establish_Retrosans.ttf') format('truetype'); /* TTF 폰트 형식 */
+}
+
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('/static/fonts/GmarketSansTTFMedium.ttf') format('truetype'); /* TTF 폰트 형식 */
+}
 
 @keyframes fadeIn {
   from {
@@ -26,13 +35,15 @@ body {
     text-align: center;
     align-items: center; 
   }
+
   h1 {
     font-size: 24px;
+    font-family: 'establishFont', sans-serif;
+    font-weight: 500;
     margin-top: 30px;
     margin-bottom: 35px;
-    font-family: 'TiltleFont', sans-serif;
-    font-weight: 500;
   }
+
   .box-container {
     display: flex;
     flex-wrap: wrap;
@@ -41,6 +52,7 @@ body {
     margin-bottom: 5vh;
     border-radius: 10px;
     background-color: #f0f0f0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 아래 방향으로 약한 그림자 */
   }
   .box {
     width: 8%; /* 각 박스의 너비 조정 */
@@ -79,6 +91,8 @@ body {
     flex-direction: column;
     border: 2px dotted transparent;
     justify-content: space-between;
+    justify-content: center;
+    align-items: center;
   }
   .wordcloud_1 {
     display: flex;
@@ -89,7 +103,8 @@ body {
     border-radius: 20px;
     width: 22vw;
     height: 35vh;
-    margin-bottom: 3px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 아래 방향으로 약한 그림자 */
   }
   .wordcloud_1 img {
     /* 이미지의 스타일 설정 */
@@ -102,6 +117,8 @@ body {
   }
   .period {
     display: flex;
+    align-items: center;
+    justify-content: center;
     border: 2px dotted transparent;
     font-family: 'TiltleFont', sans-serif;
     font-weight: lighter;
@@ -114,33 +131,46 @@ body {
   }
 
   .chart {
-    width: 70vw;
+    margin-top: 15px;
+    width: 80vw;
     display: flex;
     justify-content: space-between;
   }
-
+.chart_text {
+  font-family: 'keywordFont', sans-serif;
+}
   .main_chart_1 {
     display: flex;
     flex-direction: column;
-    border: 2px dotted red;
+    border: 2px dotted transparent;
     justify-content: center;
     align-items: center;
   }
   .main_chart_1 img {
-    border: 2px dotted green;
+    border: 2px dotted transparent;
+    animation: fadeIn 1s ease-out forwards;
   }
   .main_chart_2 {
     display: flex;
     flex-direction: column;
-    border: 2px dotted blue;
+    border: 2px dotted transparent;
     justify-content: center;
     align-items: center;
   }
   .main_chart_2 img {
-    border: 2px dotted lightblue;
+    border: 2px dotted transparent;
+    animation: fadeIn 1s ease-out forwards;
   }
   .download_image {
-    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid rgb(192, 192, 192);
+    background-color: rgb(228, 228, 228);
+    cursor: pointer;
+    width:150px;
   }
 
   .download_image a {
@@ -152,3 +182,4 @@ body {
   .download_image a:visited {
     color: black; /* 방문한 링크의 색상을 검은색으로 설정 */
   }
+
