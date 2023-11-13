@@ -12,8 +12,6 @@ COLORS = ['orange', 'darkturquoise',
           '#ffc000', '#8fd9b6', '#ff9999', '#d395d0']
 
 # 원형 차트 그리기
-
-
 def makeCirCularGraph(contents):
     # 부채꼴 모양 설정
     wedgeprops = {'width': 0.7, 'edgecolor': 'w', 'linewidth': 5}
@@ -32,7 +30,8 @@ def makeCirCularGraph(contents):
                  startangle=90,
                  counterclock=False,
                  labels=labels,
-                 textprops={'size': 25},
+                 labeldistance=1.1,
+                 textprops={'size': 20, 'weight': 'bold'},
                  wedgeprops=wedgeprops,
                  colors=COLORS)
 
@@ -71,7 +70,7 @@ def makeCirCularGraph(contents):
 
     ax.tick_params(colors='white')
 
-    plt.legend(bbox_to_anchor=(1.1, 0.2), loc='center right', fontsize=15)
+    plt.legend(bbox_to_anchor=(1.1, 0.2), loc='center right', fontsize=20)
     plt.savefig('static/chart/pie_chart.png')
 
 # 꺽은선 그래프 파일 만들기
@@ -85,10 +84,13 @@ def makeLineGraph(contents):
 
     fig = plt.figure(figsize=(20, 10), facecolor='white')
     for i in range(len(KEYWORDS)):
-        plt.plot(x, contents[KEYWORDS[i]], color=COLORS[i], linewidth=1.5, linestyle='-', marker='o',
-                 markersize=8, markerfacecolor="white", markeredgewidth=1.5, label=contents[KEYWORDS[i]])
+        plt.plot(x, contents[KEYWORDS[i]], color=COLORS[i], linewidth=5, linestyle='-', marker='o',
+                 markersize=12, markerfacecolor="white", markeredgewidth=5, label=contents[KEYWORDS[i]])
 
-    plt.legend(KEYWORDS, loc='center right', fontsize=15)
+    plt.xticks(fontsize=16, fontweight='bold')
+    plt.yticks(fontsize=16, fontweight='bold')
+
+    plt.legend(KEYWORDS, loc='center right', fontsize=20)
     plt.savefig('static/chart/line_chart.png')
 
 
